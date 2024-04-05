@@ -1,13 +1,14 @@
 """ Программа для вывода текста наоборот """
 
 from typing import NoReturn
+from getpass import getuser
 
 
 def _text_reverse(lang: str) -> NoReturn:
     """ Изменение текста """
-
+    name: str = getuser()
+    
     if lang.lower() == "ru":
-        name: str = input("Введите свое имя: ")
         print(f'Привет, {name}. Добро пожаловать в программу "Текст наоборот".')
         question: str = input("Желаете ознакомиться с инструкцией по использованию программы(да/нет)?: ")
 
@@ -18,7 +19,6 @@ def _text_reverse(lang: str) -> NoReturn:
         _output_text(text_input, lang, name)
 
     elif lang.lower() == "en":
-        name: str = input("Enter your name: ")
         print(f'Hi, {name}. Welcome to the program "Text in reverse".')
         question: str = input("Would you like to read the instructions for using the program(yes/no)?: ")
 
